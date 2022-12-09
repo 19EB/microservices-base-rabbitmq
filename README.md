@@ -105,20 +105,37 @@ npm run dev
 Navigate to `http://localhost:8000`
 
 ### Endpoints
+
 The project has couple endpoints to ping each other and one normal endpoint.
 
+  
+
 `http://localhost:8000/user/list`
-`http://localhost:8000/user/ping-client` 
+
+`http://localhost:8000/user/ping-client`
+
 `http://localhost:8000/user/ping-product`
 
+  
+
 `http://localhost:8000/client/list`
-`http://localhost:8000/client/ping-user` 
+
+`http://localhost:8000/client/ping-user`
+
 `http://localhost:8000/client/ping-product`
 
+  
+
 `http://localhost:8000/product/list`
-`http://localhost:8000/product/ping-user` 
+
+`http://localhost:8000/product/ping-user`
+
 `http://localhost:8000/product/ping-client`
 
+  
+
 ## License
+
+  
 
 This project is licensed under the MIT License
