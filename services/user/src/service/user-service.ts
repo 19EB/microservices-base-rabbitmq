@@ -1,5 +1,4 @@
 import UserRepository from '../database/repository/user-repository';
-import { PublishClientEvent, PublishProductEvent } from '../util';
 
 class UserService {
 

@@ -3,10 +3,9 @@ import config from '../config';
 import UserService from '../service/user-service';
 
 const MESSAGE_BROKER_URL = config.MESSAGE_BROKER_URL;
-const EXCHANGE_NAME = config.EXCHANGE_NAME;
-const QUEUE_NAME = config.QUEUE_NAME;
-
-const ROUTING_KEY = config.USER_ROUTING_KEY;
+const EXCHANGE_NAME = 'MICROSERVICES-BASE';
+const QUEUE_NAME = 'USER-QUEUE';
+const ROUTING_KEY = 'USER-ROUTING-KEY';
 
 export const CreateChannel = async () => {
     try {
@@ -14,6 +13,7 @@ export const CreateChannel = async () => {
         const connection = await amqplib.connect(MESSAGE_BROKER_URL);
         const channel = await connection.createChannel();
         await channel.assertExchange(EXCHANGE_NAME, 'direct');
+        
         return channel;
     }catch(err) {
         throw err;

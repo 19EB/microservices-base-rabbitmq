@@ -3,10 +3,9 @@ import config from '../config';
 import ProductService from '../service/product-service';
 
 const MESSAGE_BROKER_URL = config.MESSAGE_BROKER_URL;
-const EXCHANGE_NAME = config.EXCHANGE_NAME;
-const QUEUE_NAME = config.QUEUE_NAME;
-
-const ROUTING_KEY = config.PRODUCT_ROUTING_KEY;
+const EXCHANGE_NAME = 'MICROSERVICES-BASE';
+const QUEUE_NAME = 'PRODUCT-QUEUE';
+const ROUTING_KEY = 'PRODUCT-ROUTING-KEY';
 
 export const CreateChannel = async () => {
     try {

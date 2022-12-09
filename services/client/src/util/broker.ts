@@ -3,10 +3,9 @@ import config from '../config';
 import ClientService from '../service/client-service';
 
 const MESSAGE_BROKER_URL = config.MESSAGE_BROKER_URL;
-const EXCHANGE_NAME = config.EXCHANGE_NAME;
-const QUEUE_NAME = config.QUEUE_NAME;
-
-const ROUTING_KEY = config.CLIENT_ROUTING_KEY;
+const EXCHANGE_NAME = 'MICROSERVICES-BASE';
+const QUEUE_NAME = 'CLIENT-QUEUE'
+const ROUTING_KEY = 'CLIENT-ROUTING-KEY'
 
 export const CreateChannel = async () => {
     try {

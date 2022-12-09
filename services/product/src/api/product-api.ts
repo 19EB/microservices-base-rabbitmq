@@ -2,7 +2,6 @@ import { Channel } from "amqplib";
 import { Express, NextFunction, Request, Response } from "express"
 import ProductService from "../service/product-service";
 import { SubscribeMessage, PublishMessage } from "../util/broker";
-import config from "../config";
 
 const ProductAPI = (app:Express, channel:Channel) => {
 
@@ -19,7 +18,7 @@ const ProductAPI = (app:Express, channel:Channel) => {
             event: 'PING',
             data: { msg: 'Hello from product service'}
         }
-        PublishMessage(channel, config.CLIENT_ROUTING_KEY, JSON.stringify(payload));
+        PublishMessage(channel, 'CLIENT-ROUTING-KEY', JSON.stringify(payload));
         return res.status(200).json({msg: 'Pinged client service'});
     });
 
@@ -28,7 +27,7 @@ const ProductAPI = (app:Express, channel:Channel) => {
             event: 'PING',
             data: { msg: 'Hello from product service'}
         }
-        PublishMessage(channel, config.USER_ROUTING_KEY, JSON.stringify(payload));
+        PublishMessage(channel, 'USER-ROUTING-KEY', JSON.stringify(payload));
         return res.status(200).json({msg: 'Pinged user service'});
     });
 
